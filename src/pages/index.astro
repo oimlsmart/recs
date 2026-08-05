@@ -1,0 +1,120 @@
+---
+/**
+ * The SMART Recommendations minisite (/recs): what OIML publishes,
+ * authored by experts — the executable Recommendations as the program's
+ * normative content. Style: the OIML SMART writing guide.
+ */
+const recs = [
+  { id: 'R 60', title: 'Metrological regulation for load cells', year: '2021', note: 'The first modelled Recommendation — requirements, tests, and forms, with clause-level provenance.' },
+  { id: 'R 91', title: 'Automatic speed measuring instruments', year: '2021', note: 'Radar and related speed enforcement instruments, modelled end to end.' },
+  { id: 'R 129', title: 'Multi-dimensional measuring instruments', year: '2020', note: 'Dimensioning and weighing instruments for logistics.' },
+  { id: 'R 144', title: 'Ambient air quality measuring systems', year: '2023', note: 'Continuous emissions and air-quality measurement.' },
+]
+
+const layers = [
+  { name: 'Requirements', desc: 'Normative statements as executable constraints, each carrying its clause citation back to the source document.' },
+  { name: 'Conformance tests', desc: 'The procedures a laboratory performs, modelled as processes with declared steps and verdict criteria.' },
+  { name: 'Test report forms', desc: 'The evidence surface of every test run: inputs, conditions, readings, and computed results.' },
+  { name: 'Terminology', desc: 'The governed vocabulary, shared across Recommendations through the SMART Vocabulary.' },
+]
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SMART Recommendations — OIML SMART</title>
+    <meta name="description" content="The published, expert-authored executable OIML Recommendations — the normative content of the OIML SMART program." />
+    <style>
+      :root {
+        --paper: #faf7f2; --ink: #1a2332; --ink-soft: #4a5568; --accent: #004996;
+        --rule: #d9d4c7; --paper-soft: #f3efe7;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root { --paper: #14181f; --ink: #e8e6e1; --ink-soft: #a8b0bc; --accent: #6ba3e8; --rule: #2c3542; --paper-soft: #1c222c; }
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--paper); color: var(--ink); font-family: Georgia, 'Times New Roman', serif; line-height: 1.6; }
+      main { max-width: 56rem; margin: 0 auto; padding: 4rem 1.5rem 6rem; }
+      h1 { font-size: clamp(2rem, 5vw, 3.25rem); font-weight: 500; letter-spacing: -0.025em; line-height: 1.05; margin: 1.5rem 0 1rem; }
+      h2 { font-size: 1.5rem; font-weight: 600; margin: 2.5rem 0 0.75rem; }
+      p { color: var(--ink-soft); max-width: 42rem; }
+      .lede { font-size: 1.125rem; }
+      .brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--ink); font-size: 0.9375rem; }
+      .brand:hover { color: var(--accent); }
+      table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.9375rem; }
+      th, td { text-align: left; padding: 0.625rem 0.75rem; border-bottom: 1px solid var(--rule); }
+      th { font-weight: 600; }
+      td { color: var(--ink-soft); }
+      td:first-child { color: var(--ink); font-weight: 600; white-space: nowrap; }
+      ul { color: var(--ink-soft); }
+      li { margin: 0.375rem 0; }
+      a { color: var(--accent); }
+      footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); font-size: 0.8125rem; color: var(--ink-soft); }
+    </style>
+  </head>
+  <body>
+    <main>
+      <a class="brand" href="https://www.oimlsmart.org/">← OIML SMART</a>
+      <picture>
+        <source srcset="/recs/img/components/smart-rec-dark.svg" media="(prefers-color-scheme: dark)" />
+        <img src="/recs/img/components/smart-rec-light.svg" alt="The SMART Recommendations logo." width="140" />
+      </picture>
+      <h1>SMART Recommendations</h1>
+      <p class="lede">
+        The published, expert-authored executable OIML Recommendations. A SMART Recommendation is the
+        normative document rendered as a computable model: its requirements, conformance tests, test
+        report forms, and terminology are structured data with clause-level provenance back to the
+        source publication.
+      </p>
+
+      <h2>Purpose</h2>
+      <p>
+        OIML Recommendations govern the metrological performance of measuring instruments in legal
+        use. In their published form they are documents. In the OIML SMART program they are
+        executable models: the same content, authored by the same experts, expressed so that software
+        can read a requirement, run a test, and record the evidence. The Recommendation remains the
+        authority; the model is its faithful, citable form.
+      </p>
+
+      <h2>The modelled Recommendations</h2>
+      <table>
+        <thead>
+          <tr><th>Recommendation</th><th>Title</th><th>Edition</th></tr>
+        </thead>
+        <tbody>
+          {recs.map(r => (
+            <tr><td>{r.id}</td><td>{r.title}</td><td>{r.year}</td></tr>
+          ))}
+        </tbody>
+      </table>
+
+      <h2>What a SMART Recommendation contains</h2>
+      <ul>
+        {layers.map(l => (
+          <li><strong>{l.name}.</strong> {l.desc}</li>
+        ))}
+      </ul>
+
+      <h2>Authorship and provenance</h2>
+      <p>
+        Each SMART Recommendation is authored by metrology experts against the published OIML
+        Recommendation. Every modelled clause carries its source citation, so a reviewer can check
+        the model against the document line by line. The model is authored in the Primmel language
+        and published as a versioned package; the OIML-CS SMART platform renders and runs it.
+      </p>
+
+      <h2>History</h2>
+      <p>
+        The program began with OIML R 60, the load-cell Recommendation, as the proving ground for
+        the modelling methodology. R 91, R 129, and R 144 followed, each extending the shared core
+        that the first established. New Recommendations enter the program through the same
+        methodology and the same review discipline.
+      </p>
+
+      <footer>
+        Part of <a href="https://www.oimlsmart.org/">OIML SMART</a>. Developed under the OIML SMART program by Ribose.
+      </footer>
+    </main>
+  </body>
+</html>
