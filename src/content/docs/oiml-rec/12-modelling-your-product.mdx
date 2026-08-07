@@ -1,7 +1,7 @@
 ---
 title: 'Modelling Your Product'
 shortTitle: 'Modelling Your Product'
-description: 'The manufacturer’s product reference package (the ACME LC-500 pilot).'
+description: 'The manufacturer’s product reference package (the ACME LC-500 worked example).'
 eyebrow: 'Authoring · 12 of 17'
 order: 12
 ---
@@ -12,8 +12,8 @@ order: 12
 > conformance-relevant aspect and promise **mapped to the
 > Recommendation**, and the package consumed by your customers in two
 > modes, abstract import and live integration. The worked example is
-> the pilot: **ACME's LC-500** load cell mapped to R 60, consumed by a
-> quarry's belt scale. The normative spec of the supply-chain model is
+> **ACME's LC-500** load cell mapped to R 60, consumed by a quarry's
+> belt scale, both fictional, the simulator's demonstration scenario. The normative spec of the supply-chain model is
 > Volume I, [chapter 15](https://www.primmel.org/primmel-smart-docs/primmel/15-model-supply-chain/) (Primmel SMART docs), this
 > chapter is the authoring path.
 
@@ -185,8 +185,8 @@ Volume I, chapter 5 gives it teeth (§15.4):
   visibly (it never fails: operational data is legitimately unmappable).
 
 The platform's supply-chain gate (`browser/build/product-coverage.ts`,
-validate section 1h) computes all of it on every build; the pilot's
-steady state is the proof:
+validate section 1h) computes all of it on every build; the live
+demonstration's steady state is the proof:
 
 ```text
 acme-lc500 (product_reference → oiml-r60; consumers: quarry-belt-scale)
@@ -219,7 +219,7 @@ customer in both modes). Multi-manufacturer composition, one customer
 integrating two product packages, is the same pattern twice: the
 patterns compose; nothing in the chain rule privileges one manufacturer.
 
-## 12.8 The live pilot, end to end
+## 12.8 The live demonstration, end to end
 
 Everything in this chapter runs as ONE demonstration (TODO.roadmap/37 , 
 the doctrine's worked examples made real: Volume I, §14.9 and §15.7):
@@ -228,7 +228,7 @@ the doctrine's worked examples made real: Volume I, §14.9 and §15.7):
 cd browser && npm run pilot
 ```
 
-From a clean checkout, the pilot:
+From a clean checkout, the demonstration (the `pilot` suite):
 
 1. **executes the type evaluation**, the LC-500 against the real R 60
    program (three samples, the full dispatch/run/report/verdict/

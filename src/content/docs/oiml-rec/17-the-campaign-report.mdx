@@ -1,7 +1,7 @@
 ---
-title: 'The Pilot Report'
-shortTitle: 'The Pilot Report'
-description: 'The first campaign, executed 2026-08-01 against the OIML SMART SST.'
+title: 'The Demonstration Campaign Report'
+shortTitle: 'The Campaign Report'
+description: 'The first demonstration campaign, executed 2026-08-01 against the OIML SMART SST.'
 eyebrow: 'Authoring · 17 of 17'
 order: 17
 ---
@@ -10,7 +10,7 @@ order: 17
 > simulated hardware, the protocol's §1 slot filled by the
 > `acme-lc500` SST instance; the /world channel stood in for physical
 > access). The campaign followed the
-> [protocol](/docs/oiml-rec/16-real-instrument-pilot) step for step. Every number
+> [protocol](/docs/oiml-rec/16-real-instrument-campaign) step for step. Every number
 > below is from the executed runs, not the design.
 
 ## 1. What the program got right, the simulated chain transferred unchanged
@@ -37,7 +37,7 @@ ran in simulation carried the campaign:
   certificate issued as a CNML document with its evidence chain
   intact (the `cnml-verify` contract, live).
 - **Surveillance.** The monitor's schedule ran the quarter-accrual
-  pattern (the pilot e2e: 2,147 + 2,147 pass verdicts; drift flags, an
+  pattern (the live-twin e2e suite, `pilot`: 2,147 + 2,147 pass verdicts; drift flags, an
   outage degrading to `indeterminate`, a fault opening a service
   case), append-only, no rewrites.
 
@@ -102,7 +102,7 @@ file.
   `composite-sst-acceptance` 3/3, `sim-practice` 9/9, all live
   against the SST, 2026-08-01.
 
-## 5. What the physical pilot still owes
+## 5. What the physical campaign still owes
 
 The protocol's fieldwork legs, a physical instrument (or harness),
 the chamber log against the campaign log, the human expert's
@@ -114,7 +114,7 @@ what made the dry run meaningful.
 
 ## 6. Where the flow runs next
 
-The certification chain this pilot's twins plug into now runs end to
+The certification chain this demonstration's twins plug into now runs end to
 end in the app: [the OIML-CS flow, executable](/docs/oiml-cs/08-the-flow-executable)
 (the oiml-cs volume, chapter 8), application → sample request →
 custody → runs → evaluation marks → CNML-signed issuance → BIML

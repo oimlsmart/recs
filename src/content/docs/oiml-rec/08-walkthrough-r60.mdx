@@ -292,11 +292,12 @@ because this exact drift shipped green once.
 ## 8.8 Evaluation walk: thirteen flows to a certificate
 
 `data/r60/sample-data.yaml` seeds thirteen complete flows compiled from
-fifteen real certificate PDFs, the DE1/PTB Hottinger HLCi family among
-them: one manufacturer → one family (`technology: digital`,
+fifteen real certificate PDFs (the public OIML-CS register, issuer and
+manufacturer names replaced by the fictional set): one manufacturer →
+one family (`technology: digital`,
 `humidity_symbol: CH`, `construction: strain-gauge`, parameters p_LC
 0.7, t_min −10 °C, t_max +40 °C…) → groups by classification label
-(`grp-hbk-hlci-d1` with `group_label: "D1"`, n_lc 6000, Y 20000,
+(`grp-acme-lc-d1` with `group_label: "D1"`, n_lc 6000, Y 20000,
 Z 6000, DR 0.03 kg) → models → 1–2 samples with `test_context` →
 application → test request → test report with form instances →
 evaluation → ACTIVE certificate. The full Chapter 6 synthesis runs over

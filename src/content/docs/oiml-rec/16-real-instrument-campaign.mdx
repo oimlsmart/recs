@@ -1,7 +1,7 @@
 ---
-title: 'The Real-Instrument Pilot'
-shortTitle: 'The Pilot Protocol'
-description: 'The pilot protocol, execution-ready, waiting on a physical instrument with a Primmel SMART twin.'
+title: 'The Real-Instrument Campaign'
+shortTitle: 'The Campaign Protocol'
+description: 'The real-instrument campaign protocol, execution-ready, waiting on a physical instrument with a Primmel SMART twin.'
 eyebrow: 'Authoring · 16 of 17'
 order: 16
 ---
@@ -15,7 +15,7 @@ order: 16
 The twin-certification program is proven in simulation: the six
 requirements, the probe channel, the verdict chain, the behavioral
 fidelity classes, and the deployable compliance engine all run green
-against the simulated SMART twins. The pilot proves the program
+against the simulated SMART twins. The real-instrument campaign proves the program
 **outside simulation**: one real instrument, one real campaign, one
 decision record a human expert can review line by line.
 
@@ -23,7 +23,7 @@ decision record a human expert can review line by line.
 
 ## 1. The instrument slot
 
-The pilot instrument must provide one of:
+The campaign instrument must provide one of:
 
 1. **A native Primmel twin**, the instrument (or its companion
    service) serves the `/twin` contract derived from its product
@@ -37,7 +37,7 @@ Everything else, the governed aspect set, the probe schedule, the
 verdict chain, the certificate, comes from the program unchanged. The
 instrument is the *only* variable.
 
-**Candidate profile (R 60, the reference pilot):** a digital load cell
+**Candidate profile (R 60, the reference campaign):** a digital load cell
 with a readable indication channel (RS-485/Modbus, Ethernet, or a
 vendor SDK), placed under a calibrated deadweight stack, in a room
 whose temperature can be driven (a thermal chamber is ideal; a
@@ -91,12 +91,12 @@ The harness is a small service between the physical instrument and the
 
 A harness is one process with one config file (channel, registers,
 poll rates, the product package it serves). The reference harness for
-the pilot targets a Modbus-RTU cell; a second transport is a new
+the campaign targets a Modbus-RTU cell; a second transport is a new
 config, never new code.
 
 ## 4. The evidence-review checklist (the human expert's pass)
 
-The pilot's decision record is reviewed by a metrologist who did not
+The campaign's decision record is reviewed by a metrologist who did not
 write the software. The checklist, in order:
 
 - [ ] Admission: the twin's IS-facts ≡ the physical markings (serial,
@@ -114,7 +114,7 @@ write the software. The checklist, in order:
 - [ ] The surveillance window's re-judgments append cleanly; no
       rewrite, no gap in the stream.
 
-## 5. The pilot report
+## 5. The campaign report
 
 After the decision, the report (published next to this chapter):
 
