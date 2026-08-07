@@ -1,7 +1,7 @@
 ---
 title: 'Modelling Your Lab'
 shortTitle: 'Modelling Your Lab'
-description: 'The laboratory’s SOPs, equipment register and record forms as an implementation package (the MTL Rhein Ruhr pilot).'
+description: 'The laboratory’s SOPs, equipment register and record forms as an implementation package (a fictional worked-example laboratory).'
 eyebrow: 'Authoring · 10 of 17'
 order: 10
 ---
@@ -15,8 +15,9 @@ order: 10
 > **accreditation scope** answers, by cover calculus, which tests the lab
 > may be dispatched at all. The coverage calculus, not prose , 
 > then answers *"is this lab's procedure a fulfilment of the method?"*
-> The worked example is the pilot: **MTL Rhein Ruhr**, a fictional but
-> complete Scheme-A load-cell laboratory mapped to R 60-2.
+> The worked example is **MTL Rhein Ruhr**, a fictional
+> Scheme-A load-cell laboratory mapped to R 60-2, invented for this
+> walkthrough and existing nowhere else.
 
 ---
 
@@ -73,7 +74,7 @@ organization:
   name: MTL Rhein Ruhr GmbH
   role: test-laboratory
   scheme: A
-  accreditation: "DAkkS D-PL-19283-01-00 — ISO/IEC 17025, … (fictional pilot)"
+  accreditation: "EXAMPLE D-PL-19283-01-00 — ISO/IEC 17025, … (fictional)"
 maps_to:
   standard: r60
   methods:
@@ -195,13 +196,13 @@ types, or `integer` ⇒ `number` widening, pass as-is):
 
 - `coerce: int-bool`, the lab records a **count** (integer) where the
   required form asks **applied/not-applied** (boolean): a positive count
-  coerces to true. The pilot's `contact_discharge_count` and
+  coerces to true. The example's `contact_discharge_count` and
   `air_discharge_count` fulfil the esd form's
   `discharge_types.contact_discharges` / `.air_discharges` booleans this
   way.
 - `mapping:`, a **multi-valued or free-text** recording reducing to a
   **single-valued** required field (an enum, or any scalar): the note
-  states how. The pilot's `polarity_applied` records 'positive' /
+  states how. The example's `polarity_applied` records 'positive' /
   'negative' / 'both' (R 60-2 requires both polarities) where the
   required form models one enum value; the note fixes the transcription
   convention.
@@ -275,7 +276,7 @@ enforces seven rules:
 6. stricter steps are never silent (`exceeds` ⇔ a "stricter" pair
    description).
 
-The pilot's report, computed by the calculus:
+The example's report, computed by the calculus:
 
 ```text
 lab-mtl-rhein (data/lab-mtl-rhein/lab-to-r60-2.prm)
@@ -341,7 +342,7 @@ Coverage answers *"is the procedure a fulfilment?"*; the flow test
 (`browser/src/__tests__/lab-implementation.test.ts`) answers *"does the
 SOP produce the required evidence?"*, by **executing** the SOP model:
 
-1. walk the steps in order at the pilot run date (2026-06-08): every
+1. walk the steps in order at the example run date (2026-06-08): every
    step has its executor; every equipment used is in calibration on that
    date;
 2. each step produces the record fields whose `recorded_at` names it;
@@ -383,7 +384,7 @@ distinct: R 60-2's esd, bursts, surge, emc-susceptibility and
 short-time-power tests all target `/req/electronic/disturbances`, yet
 each method reaches its own verdict on it from its own severity, its own
 evidence, its own acceptance criterion. A single pair claiming all five
-judgments documents none of them. The pilot therefore maps each method
+judgments documents none of them. The example therefore maps each method
 as its own coverage; if your lab genuinely covers two such methods,
 model them as **separate coverages** (two packages, one per method
 family) or **split the SOP** so each method's disturbance verdict has

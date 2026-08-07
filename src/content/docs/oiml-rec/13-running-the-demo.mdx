@@ -10,7 +10,8 @@ The complete manual for setting up the OIML SMART demo: every command,
 the output to expect, what to click, and how to verify each link of the
 full chain, the OIML-CS certification workflow, the participant
 registry, the live-twin monitor, the twin-certification program, the
-standalone sim instruments, and the asserted pilot.
+standalone sim instruments, and the asserted live-twin suite (the
+`pilot` e2e).
 
 > **What is fictional, what is real.** Every demo *value* is fictional
 > and marked: the `twin-demo-` id prefix, `demo: true` on the twin
@@ -52,9 +53,9 @@ Expected output (verbatim):
 Deleted /Users/…/smart/data/oiml-smart.db
 Seeded 7 demo accounts
   admin@oiml.org — OIML Admin (admin)
-  applicant@oiml.org — HBK Applicant (applicant, org: mfr-hbk)
-  ia@oiml.org — IA Officer (DE1) (ia_officer, org: DE1)
-  tl@oiml.org — TL Operator (PTB) (tl_operator, org: 21)
+  applicant@oiml.org — ACME Applicant (applicant, org: mfr-acme)
+  ia@oiml.org — IA Officer (ia_officer, org: EX1)
+  tl@oiml.org — TL Operator (tl_operator, org: 21)
   cs@oiml.org — CS Administrator (cs_admin)
   viewer@oiml.org — Viewer (viewer)
   developer@ribose.com — Ribose Developer (admin)
@@ -89,9 +90,9 @@ role is for:
 | Account | Role | What it demonstrates |
 |---|---|---|
 | `admin@oiml.org` | admin | every surface |
-| `applicant@oiml.org` | applicant (HBK) | the applicant portal, apply for certification |
-| `ia@oiml.org` | IA officer (DE1) | the Issuing Authority console, dispatch, evaluate, sign |
-| `tl@oiml.org` | TL operator (PTB) | the lab workbench, test requests, test runs, forms |
+| `applicant@oiml.org` | applicant (ACME) | the applicant portal, apply for certification |
+| `ia@oiml.org` | IA officer | the Issuing Authority console, dispatch, evaluate, sign |
+| `tl@oiml.org` | TL operator | the lab workbench, test requests, test runs, forms |
 | `cs@oiml.org` | CS administrator | the CS admin console + the **twin console** |
 | `viewer@oiml.org` | viewer | read-only browsing |
 | `developer@ribose.com` | admin | every surface |
@@ -118,7 +119,7 @@ Walk it in order:
 1. **Applicant portal** (as `applicant@oiml.org`): the applications
    list, open one, see its status, documents, and the instrument it
    covers.
-2. **Lab inbox / workbench** (as `tl@oiml.org`): the PTB test requests
+2. **Lab inbox / workbench** (as `tl@oiml.org`): the test laboratory's test requests
   , open one and start a test run.
 3. **The test-run view**: execute a conformance test against the real
    form schema, enter readings, watch the form's **computed verdicts**
