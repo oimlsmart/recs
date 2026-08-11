@@ -9,23 +9,37 @@ const NAV = [
   { label: 'Demo', href: '/demo' },
 ]
 
-const RECS = [
-  { id: 'r60', name: 'OIML R 60:2021 — load cells', note: 'The first full model: classification, MPE envelopes, the conformance tests, the R 60-3 forms.' },
-  { id: 'r91', name: 'OIML R 91:1990 — radar speed meters', note: 'Speed measurement: the operational envelope and its disturbance tests.' },
-  { id: 'r129', name: 'OIML R 129:2000 — multi-dimensional measuring instruments', note: 'Dimensional metrology with multi-axis measurands.' },
-  { id: 'r144', name: 'OIML R 144:2013 — continuous gas analyzers', note: 'Per-channel measurands and the sampling-line subsystem.' },
+const OFFICIAL = [
+  { id: 'r60', name: 'OIML R 60:2021 — Load cells', note: 'The reference SMART model — the only official pilot. Classification, MPE envelopes, the conformance tests, the R 60-3 forms.' },
+]
+
+const DEMOS = [
+  { id: 'r91', name: 'OIML R 91:2025 — Traffic speed meters', note: 'Demo model. Speed measurement: the operational envelope and its disturbance tests.' },
+  { id: 'r129', name: 'OIML R 129:2020 — Multi-dimensional measuring instruments', note: 'Demo model. Dimensional metrology with multi-axis measurands.' },
+  { id: 'r144', name: 'OIML R 144:2013 — Continuous emissions monitors', note: 'Demo model. CO and NOx in stationary source emissions: per-channel measurands and the sampling-line subsystem.' },
 ]
 ---
 
-<Base title="The live models" description="Walk the published SMART Recommendations.">
+<Base title="The live models" description="R 60 is the official SMART pilot; R 91, R 129, and R 144 are demo models.">
   <MinisiteNav sections={NAV} base="/recs" />
   <main class="max-w-3xl mx-auto px-6 py-14 docs-body">
     <p class="font-mono text-xs tracking-widest uppercase text-ink-muted mb-3">SMART Recommendations · Demo</p>
     <h1 class="font-serif text-3xl font-semibold text-ink mb-6">The live models</h1>
-    <p>Each published Recommendation renders from its model: the terminology, the requirements classes, the conformance tests, the report forms, and the certification workflow that runs on them. Follow one and read the model against the document.</p>
+    <p>R 60 is the reference SMART model — the only official pilot. The other three are demo models, built to exercise the method on other instrument families. Each renders from its model: the terminology, the requirements, the conformance tests, the report forms, and the certification workflow that runs on them.</p>
 
-    <ul class="mt-6 space-y-4">
-      {RECS.map(r => (
+    <h2 class="font-serif text-lg font-semibold text-ink mt-8 mb-3">The official pilot</h2>
+    <ul class="space-y-4">
+      {OFFICIAL.map(r => (
+        <li class="border border-rule rounded-lg p-5 bg-paper-raised">
+          <a href={`/recs/${r.id}/`} class="text-accent font-semibold no-underline">{r.name}</a>
+          <p class="text-sm text-ink-soft mt-1">{r.note}</p>
+        </li>
+      ))}
+    </ul>
+
+    <h2 class="font-serif text-lg font-semibold text-ink mt-8 mb-3">Demo models</h2>
+    <ul class="space-y-4">
+      {DEMOS.map(r => (
         <li class="border border-rule rounded-lg p-5 bg-paper-raised">
           <a href={`/recs/${r.id}/`} class="text-accent font-semibold no-underline">{r.name}</a>
           <p class="text-sm text-ink-soft mt-1">{r.note}</p>
