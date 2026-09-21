@@ -1,14 +1,8 @@
 ---
-import { Base, MinisiteNav, DocsSidebar } from '@oimlsmart/site-shell'
+import Base from '../../layouts/Base.astro'
+import { DocsSidebar } from '@oimlsmart/site-shell'
 import { getCollection } from 'astro:content'
-import '../../styles/app.css'
 
-const NAV = [
-  { label: 'About', href: '/' },
-  { label: 'Story', href: '/story' },
-  { label: 'Docs', href: '/docs' },
-  { label: 'Demo', href: '/demo' },
-]
 const allDocs = await getCollection('docs')
 const chapters = allDocs.filter(d => d.id.startsWith('oiml-rec/') && d.id !== 'oiml-rec/overview')
   .sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99))
@@ -16,7 +10,6 @@ const overview = allDocs.find(d => d.id === 'oiml-rec/overview')
 ---
 
 <Base title="Authoring documentation" description="The SMART Recommendation authoring guides.">
-  <MinisiteNav sections={NAV} base="/recs" />
   <div class="max-w-7xl mx-auto px-6 py-10 grid gap-10 lg:grid-cols-[16rem_1fr]">
     <aside><DocsSidebar order={['oiml-rec']} labels={{ 'oiml-rec': 'Authoring Recommendations' }} hrefBase="/recs/docs/" /></aside>
     <main class="docs-body">

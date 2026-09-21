@@ -1,13 +1,5 @@
 ---
-import { Base, MinisiteNav } from '@oimlsmart/site-shell'
-import '../styles/app.css'
-
-const NAV = [
-  { label: 'About', href: '/' },
-  { label: 'Story', href: '/story' },
-  { label: 'Docs', href: '/docs' },
-  { label: 'Demo', href: '/demo' },
-]
+import Base from '../layouts/Base.astro'
 
 const OFFICIAL = [
   { id: 'r60', name: 'OIML R 60:2021 — Load cells', note: 'The reference SMART model — the only official pilot. Classification, MPE envelopes, the conformance tests, the R 60-3 forms.' },
@@ -21,7 +13,6 @@ const DEMOS = [
 ---
 
 <Base title="The live models" description="R 60 is the official SMART pilot; R 91, R 129, and R 144 are demo models.">
-  <MinisiteNav sections={NAV} base="/recs" />
   <main class="max-w-3xl mx-auto px-6 py-14 docs-body">
     <p class="font-mono text-xs tracking-widest uppercase text-ink-muted mb-3">SMART Recommendations · Demo</p>
     <h1 class="font-serif text-3xl font-semibold text-ink mb-6">The live models</h1>
