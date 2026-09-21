@@ -24,6 +24,10 @@ jobs:
           node-version: 24
       - run: npm ci
       - run: npm run build
+
+      - name: Nav completeness gate
+        run: npm run check:nav
+
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

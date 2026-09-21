@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "check:nav": "node scripts/check-nav.mjs"
   },
   "dependencies": {
     "@oimlsmart/site-shell": "0.2.0",
