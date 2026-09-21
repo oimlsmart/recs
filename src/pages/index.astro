@@ -1,23 +1,16 @@
 ---
-import { Base, MinisiteNav, PageHero } from '@oimlsmart/site-shell'
-import '../styles/app.css'
-
-const NAV = [
-  { label: 'About', href: '/' },
-  { label: 'Story', href: '/story' },
-  { label: 'Docs', href: '/docs' },
-  { label: 'Demo', href: '/demo' },
-]
+import Base from '../layouts/Base.astro'
+import { PageHero } from '@oimlsmart/site-shell'
+import { COMPONENT_ASSET_BASE } from '../data/site-meta'
 ---
 
-<Base title="SMART Recommendations" description="OIML SMART Recommendations — the published, expert-authored executable Recommendations.">
-  <MinisiteNav sections={NAV} base="/recs" />
+<Base description="OIML SMART Recommendations — the published, expert-authored executable Recommendations.">
   <main class="max-w-4xl mx-auto px-6 py-14">
     <PageHero
       eyebrow="OIML SMART · Component 1"
       title="SMART Recommendations"
       lede="A Recommendation published as an executable model, authored by experts, citable to the clause — the document and the machine-readable form are one artifact."
-      logo={{ name: 'smart-rec', alt: 'The SMART Recommendations logo.' }}
+      logo={{ name: 'smart-rec', alt: 'The SMART Recommendations logo.', base: COMPONENT_ASSET_BASE }}
     />
     <section class="mt-10 grid gap-6 md:grid-cols-2">
       <div class="border border-rule rounded-lg p-6 bg-paper-raised">

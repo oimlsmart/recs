@@ -1,14 +1,7 @@
 ---
-import { Base, MinisiteNav, DocsSidebar } from '@oimlsmart/site-shell'
+import Base from '../../layouts/Base.astro'
+import { DocsSidebar } from '@oimlsmart/site-shell'
 import { getCollection, render } from 'astro:content'
-import '../../styles/app.css'
-
-const NAV = [
-  { label: 'About', href: '/' },
-  { label: 'Story', href: '/story' },
-  { label: 'Docs', href: '/docs' },
-  { label: 'Demo', href: '/demo' },
-]
 
 export async function getStaticPaths() {
   const allDocs = await getCollection('docs')
@@ -20,7 +13,6 @@ const { Content } = await render(doc)
 ---
 
 <Base title={doc.data.title ?? doc.id} description={doc.data.description}>
-  <MinisiteNav sections={NAV} base="/recs" />
   <div class="max-w-7xl mx-auto px-6 py-10 grid gap-10 lg:grid-cols-[16rem_1fr]">
     <aside><DocsSidebar order={['oiml-rec']} labels={{ 'oiml-rec': 'Authoring Recommendations' }} hrefBase="/recs/docs/" /></aside>
     <main class="docs-body">
