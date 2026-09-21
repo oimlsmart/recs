@@ -17,6 +17,9 @@ jobs:
       - run: npm ci
       - run: npm run build
 
+      - name: Nav completeness gate
+        run: npm run check:nav
+
       - name: Verify the page and the canonical logo asset
         run: |
           set -euo pipefail
