@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro'
 
 const OFFICIAL = [
-  { id: 'r60', name: 'OIML R 60:2021 — Load cells', note: 'The reference SMART model — the only official pilot. Classification, MPE envelopes, the conformance tests, the R 60-3 forms.' },
+  { id: 'r60', name: 'OIML R 60:2021 — Load cells', note: 'The reference SMART model — the only official pilot. Classification, MPE envelopes, the conformance tests, the R 60-3 forms.', reader: '/studio/view' },
 ]
 
 const DEMOS = [
@@ -24,6 +24,9 @@ const DEMOS = [
         <li class="border border-rule rounded-lg p-5 bg-paper-raised">
           <a href={`/recs/${r.id}/`} class="text-accent font-semibold no-underline">{r.name}</a>
           <p class="text-sm text-ink-soft mt-1">{r.note}</p>
+          {r.reader && (
+            <p class="text-sm mt-2"><a href={r.reader} class="text-accent font-medium">Read the model interactively in the Reference reader →</a></p>
+          )}
         </li>
       ))}
     </ul>
