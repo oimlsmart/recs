@@ -2,13 +2,13 @@
 import Base from '../layouts/Base.astro'
 
 const OFFICIAL = [
-  { id: 'r60', name: 'OIML R 60:2021 — Load cells', note: 'The reference SMART model — the only official pilot. Classification, MPE envelopes, the conformance tests, the R 60-3 forms.', reader: '/studio/view' },
+  { name: 'OIML R 60:2021 — Load cells', note: 'The reference SMART model — the only official pilot. Classification, MPE envelopes, the conformance tests, the R 60-3 forms.', reader: '/studio/view' },
 ]
 
 const DEMOS = [
-  { id: 'r91', name: 'OIML R 91:2025 — Traffic speed meters', note: 'Demo model. Speed measurement: the operational envelope and its disturbance tests.' },
-  { id: 'r129', name: 'OIML R 129:2020 — Multi-dimensional measuring instruments', note: 'Demo model. Dimensional metrology with multi-axis measurands.' },
-  { id: 'r144', name: 'OIML R 144:2013 — Gas analytical systems', note: 'Demo model. CO and NOx in stationary source emissions: per-channel measurands and the sampling-line subsystem.' },
+  { name: 'OIML R 91:2025 — Traffic speed meters', note: 'Demo model. Speed measurement: the operational envelope and its disturbance tests.' },
+  { name: 'OIML R 129:2020 — Multi-dimensional measuring instruments', note: 'Demo model. Dimensional metrology with multi-axis measurands.' },
+  { name: 'OIML R 144:2013 — Gas analytical systems', note: 'Demo model. CO and NOx in stationary source emissions: per-channel measurands and the sampling-line subsystem.' },
 ]
 ---
 
@@ -22,11 +22,8 @@ const DEMOS = [
     <ul class="space-y-4">
       {OFFICIAL.map(r => (
         <li class="border border-rule rounded-lg p-5 bg-paper-raised">
-          <a href={`/recs/${r.id}/`} class="text-accent font-semibold no-underline">{r.name}</a>
+          <a href={r.reader} class="text-accent font-semibold no-underline">{r.name}</a>
           <p class="text-sm text-ink-soft mt-1">{r.note}</p>
-          {r.reader && (
-            <p class="text-sm mt-2"><a href={r.reader} class="text-accent font-medium">Read the model interactively in the Reference reader →</a></p>
-          )}
         </li>
       ))}
     </ul>
@@ -35,7 +32,7 @@ const DEMOS = [
     <ul class="space-y-4">
       {DEMOS.map(r => (
         <li class="border border-rule rounded-lg p-5 bg-paper-raised">
-          <a href={`/recs/${r.id}/`} class="text-accent font-semibold no-underline">{r.name}</a>
+          <span class="font-semibold text-ink">{r.name}</span>
           <p class="text-sm text-ink-soft mt-1">{r.note}</p>
         </li>
       ))}
